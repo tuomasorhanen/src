@@ -59,7 +59,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
   <div className="flex justify-between py-2">
     <Link href="/" className="z-40 flex items-center">
       <Image {...settings.logo} alt={settings.title} className="mx-10 rounded-full max-h-12 w-12 object-contain hover:scale-105" />
-      <span className='-ml-6 text-xl'>FiCure</span>
+      <span className='-ml-6 text-xl'>Fysio</span>
     </Link>
     <div className="z-40 hidden md:block" id="navbar-default">
       <ul className="mx-10 my-2 flex">

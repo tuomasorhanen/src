@@ -8,7 +8,7 @@ import BlogSection from '../../components/blog/BlogSection';
 import CategoryFilter from '../../components/blog/CategoryFilter';
 import MyFooter from '../../components/footer/Footer';
 import Header, { IMenuItem } from '../../components/header/Header';
-import CalendlySection from 'components/calendly/CalendlySection';
+import SocialButtons from 'components/social buttons/SocialButtons';
 
 type IPageProps = {
   blogs: IPost[];
@@ -31,7 +31,7 @@ const Blogs = (props: IPageProps) => {
       <div
         className="container mx-auto py-8
       md:py-16">
-        <div className=' md:py-16 text-black text-center pb-2 font-heading text-3xl sm:text-5xl md:text-6xl '>FiCure Blogi</div>
+        <div className=' md:py-16 text-black text-center pb-2 font-heading text-3xl sm:text-5xl md:text-6xl '>Ajankohtaista</div>
         <CategoryFilter
           categories={categories}
           selectedCategory={selectedCategory}
@@ -41,6 +41,7 @@ const Blogs = (props: IPageProps) => {
           <BlogSection key={post._key} post={post} categories={categories} />
         ))}
       </div>
+      <SocialButtons />
       <MyFooter items={menu} />
       <style jsx global>{`
         :root {
@@ -56,7 +57,7 @@ const Blogs = (props: IPageProps) => {
 export const getServerSideProps: GetServerSideProps<IPageProps> = async context => {
   context.res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
   const pageQuery = groq`
-    *[_type == 'page' && name == 'blog']
+    *[_type == 'page' && name == 'ajankohtaista']
   `;
   const blogsQuery = groq`
 *[_type == 'post']{

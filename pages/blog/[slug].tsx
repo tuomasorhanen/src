@@ -7,6 +7,7 @@ import resolveReferences from '../../_lib/resolvers/resolveReferences';
 import { IPost, ISiteSettings } from '../../_lib/types';
 import BlogPost from '../../components/blog/BlogPost';
 import Header, { IMenuItem } from '../../components/header/Header';
+import SocialButtons from 'components/social buttons/SocialButtons';
 
 type IPageProps = {
   blog: IPost;
@@ -21,7 +22,7 @@ const Post = (props: IPageProps) => {
   return (
     <>
       <Head>
-        <title>{`${title} - ProEnabler Blogi`}</title>
+        <title>{`${title} - Fysio Ajankohtaista`}</title>
       </Head>
       <Header items={menu} settings={settings} />
       <BlogPost {...blog} />
@@ -32,6 +33,7 @@ const Post = (props: IPageProps) => {
           --accent-color: ${settings.accentColor.hex};
         }
       `}</style>
+            <SocialButtons />
     </>
   );
 };
