@@ -41,7 +41,6 @@ const Blogs = (props: IPageProps) => {
           <BlogSection key={post._key} post={post} categories={categories} />
         ))}
       </div>
-      <SocialButtons />
       <MyFooter items={menu} />
       <style jsx global>{`
         :root {

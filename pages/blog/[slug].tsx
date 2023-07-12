@@ -33,7 +33,7 @@ const Post = (props: IPageProps) => {
           --accent-color: ${settings.accentColor.hex};
         }
       `}</style>
-            <SocialButtons />
+
     </>
   );
 };
