@@ -36,7 +36,7 @@ const HeroSection = (props: IHero) => {
               {image && (
                 <Image
                   {...image}
-                  className="mx-auto mb-8 max-w-sm object-cover md:h-full md:w-full"
+                  className="mx-auto pt-12 max-w-sm object-cover h-full w-full"
                   alt=""
                   opacity={opacity}
                 />

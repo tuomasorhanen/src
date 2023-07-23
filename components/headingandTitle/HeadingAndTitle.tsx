@@ -9,7 +9,7 @@ const HeadingAndTitle = (props: IHeadingAndTitle) => {
   switch (style) {
     case 'centered':
       return (
-        <div key={props._key} className="md:py-16 ">
+        <div key={props._key} className="py-8 md:py-16 ">
           <div className="mx-auto max-w-4xl px-4 text-center">
             <BlockContentRenderer blockContent={blockContent && blockContent} />
           </div>

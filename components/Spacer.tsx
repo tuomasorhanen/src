@@ -6,7 +6,7 @@ const Spacer = (props: ISpacer) => {
   const getClassName = () => {
     switch (Size) {
       case 'small':
-        return 'py-12 md:py-12';
+        return 'py-4 md:py-8';
       case 'medium':
         return 'py-12 sm:py-16';
       case 'large':
