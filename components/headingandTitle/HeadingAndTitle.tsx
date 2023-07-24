@@ -15,14 +15,6 @@ const HeadingAndTitle = (props: IHeadingAndTitle) => {
           </div>
         </div>
       );
-    case 'overlap-bellow':
-      return (
-        <div key={props._key} className="md:py-16 ">
-          <div className="mx-auto max-w-4xl px-4 text-left">
-            <BlockContentRenderer blockContent={blockContent && blockContent} />
-          </div>
-        </div>
-      );
     default:
       return <></>;
   }

@@ -10,7 +10,7 @@ const CategoryFilter = (props: CategoryFilterProps) => {
   const { categories, selectedCategory, onCategorySelect } = props;
 
   return (
-    <div className="flex flex-wrap justify-center px-2 pt-8 md:pt-0">
+    <div className="flex flex-wrap justify-center px-2 pt-8">
       {categories.map(category => (
         <button
           key={category._id}

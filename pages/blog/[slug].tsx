@@ -1,13 +1,10 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { groq } from 'next-sanity';
-
 import { client } from '../../_lib/client';
-import resolveReferences from '../../_lib/resolvers/resolveReferences';
 import { IPost, ISiteSettings } from '../../_lib/types';
 import BlogPost from '../../components/blog/BlogPost';
 import Header, { IMenuItem } from '../../components/header/Header';
-import SocialButtons from 'components/social buttons/SocialButtons';
 
 type IPageProps = {
   blog: IPost;
@@ -24,8 +21,10 @@ const Post = (props: IPageProps) => {
       <Head>
         <title>{`${title} - Fysio Ajankohtaista`}</title>
       </Head>
-      <Header items={menu} settings={settings} />
+      <Header items={menu} settings={settings}/>
+      <div className='py-24 md:py-40'>
       <BlogPost {...blog} />
+      </div>
       <style jsx global>{`
         :root {
           --bg-color: ${settings.bgColor.hex};

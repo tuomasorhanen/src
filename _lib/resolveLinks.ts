@@ -84,7 +84,7 @@ const resolveLinks = async page => {
   for (let i = 0; i < page.content.length; i++) {
     let cnt = page.content[i];
 
-    if (cnt._type == 'hero' || cnt._type == 'customButton' || cnt._type == 'calendly') {
+    if (cnt._type == 'hero' || cnt._type == 'customButton') {
       cnt = await processButtons(cnt);
       page.content[i] = cnt;
     } else if (cnt._type == 'grid') {

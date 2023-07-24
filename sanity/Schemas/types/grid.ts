@@ -43,9 +43,7 @@ const grid = defineField({
         layout: 'grid',
       },
       of: [
-        { type: 'hero' },
         { type: 'card' },
-        { type: 'ball' },
         {
           name: 'blog',
           type: 'reference',

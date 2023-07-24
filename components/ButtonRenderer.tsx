@@ -32,7 +32,6 @@ const ButtonRenderer = (props: ICallToAction) => {
     }
   };
 
-  // Customize button styles based on the properties
   const buttonStyle: any = {
     backgroundColor: customColor && chosenCustomColor ? chosenCustomColor.hex : getCssVar(backgroundColor || ''),
     color: getCssVar(textColor || ''),

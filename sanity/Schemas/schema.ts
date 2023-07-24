@@ -5,14 +5,12 @@ import siteSettings from './Site Settings/siteSettings';
 import post from './Blog/post';
 import person from './Blog/person';
 import category from './Blog/category';
-import Ball from './types/ball';
 import blockContent from './types/block-content';
 import Card from './types/card';
 import columns from './types/columns';
 import CustomButton from './types/customButton';
 import grid from './types/grid';
 import lineBreak from './types/lineBreak';
-import SimpleImage from './types/simpleImage';
 import uiElement from './types/uiElement';
 import Hero from './types/Hero';
 import spacer from './types/spacer';
@@ -29,7 +27,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     category,
 
     //Objects
-    Ball,
     textContent,
     blockContent,
     Card,
@@ -38,7 +35,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     grid,
     Hero,
     lineBreak,
-    SimpleImage,
     uiElement,
     spacer,
   ],

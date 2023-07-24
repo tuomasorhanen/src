@@ -13,9 +13,6 @@ const Card = defineField({
       type: 'string',
       options: {
         list: [
-          { title: 'simple', value: 'simple' },
-          { title: 'image-top', value: 'image-top' },
-          { title: 'image-reveal', value: 'image-reveal' },
           { title: 'image-top-rounded-full', value: 'image-top-rounded-full' },
         ],
         validation: Rule => [Rule.required().error('A layout is required.')],

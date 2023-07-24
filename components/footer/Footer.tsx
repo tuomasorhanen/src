@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import { ISlug } from '../../_lib/types';
 
 export type IMenuItem = {

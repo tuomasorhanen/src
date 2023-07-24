@@ -78,22 +78,10 @@ export type IHero = {
   buttons?: ICallToAction[];
   layout:
     | 'image-bg-center'
-    | 'image-bg-center-slim'
-    | 'image-bg-left-slim'
-    | 'slash-right'
     | 'simple-image-right'
-    | 'circle-overlap-left';
   opacity?: number;
   heroTextColor?: IColor;
   heroBgColor?: IColor;
-};
-
-export type ISimpleImage = {
-  _id: string;
-  _key: string;
-  _type: string;
-  image: ISanityImage;
-  style: 'square' | 'logo-cloud';
 };
 
 export type ICard = {
@@ -103,23 +91,16 @@ export type ICard = {
   blockContent: any;
   image?: ISanityImage;
   buttons?: ICallToAction[];
-  layout: 'simple' | 'image-top' | 'image-reveal' | 'image-top-rounded-full';
+  layout: 'image-top-rounded-full';
 };
 
-export type IBall = {
-  _id: string;
-  _key: string;
-  _type: string;
-  blockContent: any;
-  opacity?: number;
-};
 
 export type IGrid = {
   _id: string;
   _key: string;
   title: string;
   columns: IColumns;
-  items: IHero[] | ICard[] | IBall[];
+  items: ICard[];
 };
 
 export type IColumns = {
@@ -134,7 +115,7 @@ export type IHeadingAndTitle = {
   _type: string;
   _key: string;
   blockContent: any;
-  style: 'centered' | 'overlap-bellow';
+  style: 'centered';
 };
 
 export type IPost = {

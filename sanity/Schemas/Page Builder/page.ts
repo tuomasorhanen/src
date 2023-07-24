@@ -37,8 +37,6 @@ const Page = {
       description: 'What shows up as the link text in search engine',
       validation: Rule => [
         Rule => Rule.required().error('Title is required.'),
-        Rule => Rule.min(3).error('Minimum 3 characters required.'),
-        Rule => Rule.max(25).error('Maximum 50 characters.'),
       ],
     },
     {
@@ -83,9 +81,6 @@ const Page = {
       ],
     }),
   ],
-  initialValue: {
-    menuOrder: 0,
-  },
   orderings: [
     {
       title: 'Menu order',

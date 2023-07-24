@@ -24,7 +24,7 @@ const Image = (props: ISanityImage & IImgProps) => {
   const src =
     urlFor(props)
       .width(props.width || 1000)
-      .quality(100) // add quality parameter here
+      .quality(100)
       .auto('format')
       .url() || '';
 

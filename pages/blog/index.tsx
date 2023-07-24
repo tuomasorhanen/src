@@ -1,14 +1,12 @@
 import { GetServerSideProps } from 'next';
 import { groq } from 'next-sanity';
 import { useState } from 'react';
-
 import { client } from '../../_lib/client';
 import { ICategory, IPost, ISiteSettings } from '../../_lib/types';
 import BlogSection from '../../components/blog/BlogSection';
 import CategoryFilter from '../../components/blog/CategoryFilter';
 import MyFooter from '../../components/footer/Footer';
 import Header, { IMenuItem } from '../../components/header/Header';
-import SocialButtons from 'components/social buttons/SocialButtons';
 
 type IPageProps = {
   blogs: IPost[];
@@ -31,7 +29,7 @@ const Blogs = (props: IPageProps) => {
       <div
         className="container mx-auto py-8
       md:py-16">
-        <div className=' md:py-16 text-black text-center pb-2 font-heading text-3xl sm:text-5xl md:text-6xl '>Ajankohtaista</div>
+        <div className='py-16 text-black text-center pb-2 font-heading text-3xl sm:text-5xl '>Ajankohtaista</div>
         <CategoryFilter
           categories={categories}
           selectedCategory={selectedCategory}

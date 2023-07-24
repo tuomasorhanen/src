@@ -21,7 +21,6 @@ const textContent = defineField({
       options: {
         list: [
           { title: 'centered', value: 'centered' },
-          { title: 'overlap-bellow', value: 'overlap-bellow' },
         ],
         validation: Rule => [Rule.required().error('A style is required.')],
       },

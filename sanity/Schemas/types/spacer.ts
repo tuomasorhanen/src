@@ -1,4 +1,3 @@
-import Spacer from 'components/Spacer';
 import { defineField } from 'sanity';
 
 const spacer = defineField({

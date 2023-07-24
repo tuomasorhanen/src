@@ -150,6 +150,7 @@ const columns = defineField({
     small: '1',
     medium: '3',
     large: '4',
+    extraLarge: '5',
   },
 });
 

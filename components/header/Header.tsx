@@ -1,5 +1,4 @@
 import chroma from 'chroma-js';
-import { Navbar } from 'flowbite-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -23,7 +22,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
 
   const [navBackground, setNavBackground] = useState('bg-transparent');
   const [navOpen, setNavOpen] = useState(false);
-  const [lineColors, setLineColors] = useState('black'); // Add this state variable
+  const [lineColors, setLineColors] = useState('black');
 
   useEffect(() => {
     const handleScroll = () => {

@@ -8,11 +8,13 @@ import { schema } from './sanity/Schemas/schema';
 import { structure } from './sanity/Schemas/types/structure';
 import { media } from 'sanity-plugin-media';
 
+
 export default defineConfig({
   basePath: '/studio',
   projectId,
   dataset,
   schema,
-  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media()],
+  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media(),
+],
   theme: myTheme,
 });

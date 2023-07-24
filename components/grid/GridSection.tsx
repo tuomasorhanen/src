@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
-
-import { IBall, ICard, IGrid, IHero, IPerson, IPost } from '../../_lib/types';
+import { ICard, IGrid, IPerson, IPost } from '../../_lib/types';
 import BlogReferenceSection from '../../components/blog/BlogReferenceSection';
-import HeroSection from '../../components/hero/HeroSection';
-import Ball from './Ball';
 import Card from './Card';
 import PersonReferenceSection from './PersonReference';
 
@@ -11,12 +8,6 @@ interface GridSectionProps extends IGrid {}
 
 const CardItem = (item: ICard) => {
   return <Card {...item} />;
-};
-const HeroItem = (item: IHero) => {
-  return <HeroSection {...item} />;
-};
-const BallItem = (item: IBall) => {
-  return <Ball {...item} />;
 };
 const PostItem = (item: IPost) => {
   return <BlogReferenceSection {...item} />;
@@ -58,13 +49,9 @@ const GridSection = (props: GridSectionProps) => {
 
   const itemsArray = Array.isArray(items) ? items : [items];
 
-  const renderGridItem = (item: ICard | IHero | IBall | IPost | IPerson) => {
+  const renderGridItem = (item: ICard | IPost | IPerson) => {
     if (item._type === 'card') {
       return CardItem(item as ICard);
-    } else if (item._type === 'hero') {
-      return HeroItem(item as IHero);
-    } else if (item._type === 'ball') {
-      return BallItem(item as IBall);
     } else if (item._type === 'post') {
       return PostItem(item as IPost);
     } else if (item._type === 'person') {

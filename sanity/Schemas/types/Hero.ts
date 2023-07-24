@@ -27,12 +27,7 @@ const Hero = {
       options: {
         list: [
           { title: 'image-bg-center', value: 'image-bg-center' },
-          { title: 'image-bg-left', value: 'image-bg-left' },
-          { title: 'image-bg-center-slim', value: 'image-bg-center-slim' },
-          { title: 'image-bg-left-slim', value: 'image-bg-left-slim' },
-          { title: 'slash-right', value: 'slash-right' },
           { title: 'simple-image-right', value: 'simple-image-right' },
-          { title: 'circle-overlap-left', value: 'circle-overlap-left' },
         ],
         validation: Rule => [Rule.required().error('A layout is required.')],
       },

@@ -2,7 +2,6 @@ import MyFooter from 'components/footer/Footer';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { groq } from 'next-sanity';
-
 import { client } from '../_lib/client';
 import resolveLinks from '../_lib/resolveLinks';
 import resolveReferences from '../_lib/resolvers/resolveReferences';

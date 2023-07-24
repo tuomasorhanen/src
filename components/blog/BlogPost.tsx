@@ -7,7 +7,7 @@ const BlogPost = (props: IPost) => {
   console.log(props);
 
   return (
-    <div key={props._key} className=" py-4 md:py-40">
+    <div key={props._key} className="">
       <div className="sm:-px-6 mx-auto max-w-3xl px-6 pb-12 lg:max-w-4xl">
         <BlockContentRenderer blockContent={blockContent && blockContent} />
       </div>
