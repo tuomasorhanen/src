@@ -15,6 +15,7 @@ import uiElement from './types/uiElement';
 import Hero from './types/Hero';
 import spacer from './types/spacer';
 import textContent from './types/textContent';
+import pricing from './types/pricing';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -37,5 +38,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     lineBreak,
     uiElement,
     spacer,
+    pricing,
   ],
 };

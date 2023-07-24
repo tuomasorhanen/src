@@ -3,6 +3,7 @@ import GridSection from './grid/GridSection';
 import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
 import HeroSection from './hero/HeroSection';
 import CustomButton from './landingPage/CustomButton';
+import Pricing from './price';
 import Spacer from './Spacer';
 import UiElement from './uIElements/UiElements';
 
@@ -27,6 +28,8 @@ const MapContent = ({ content }: IMapContentProps) => {
             return <CustomButton key={item._key} {...item} />;
           case 'spacer':
             return <Spacer key={item._key} {...item} />;
+            case 'pricing':
+              return <Pricing key={item._key} {...item} />;
           default:
             break;
         }

@@ -78,6 +78,7 @@ const Page = {
         { type: 'uiElement' },
         { type: 'grid' },
         { type: 'spacer' },
+        { type: 'pricing' },
       ],
     }),
   ],
