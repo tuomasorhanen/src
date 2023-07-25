@@ -10,9 +10,9 @@ const Pricing = (props: IPrice ) => {
 
       {service.map((service: IService) => (
         <div key={service._key} className="flex items-center justify-between border-b border-gray-300 px-4 py-2">
-          <div>{service.title}</div>
+          <div>{service.title} - {service.duration} min</div>
           <div>
-            <span className="px-4">{service.price}</span>
+            <span className="px-4">{service.price}€</span>
             <button className="rounded bg-accent p-2 text-white hover:accent hover:opacity-70">Varaa aika</button>
           </div>
         </div>
