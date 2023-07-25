@@ -14,7 +14,30 @@ const resolveReferences = async (page: IPage) => {
       const { _type } = item;
 
       switch (_type) {
-        case 'grid':
+        case 'pricing':
+          if (item.service && Array.isArray(item.service)) {
+            item.service = await Promise.all(
+              item.service.map(async (service: any) => {
+                if (service._ref) {
+                  const serviceQry = groq`*[_id == '${service._ref}']{
+                    _id,
+                    title,
+                    description,
+                    price,
+                    duration,
+                    mainImage,
+                    slug,
+                    ...
+                  }[0]`;
+                  const serviceData = await client.fetch(serviceQry);
+                  return { ...serviceData }; // Update to return serviceData directly
+                }
+                return service;
+              })
+            );
+          }
+          break;
+                case 'grid':
           item.items = await Promise.all(
             item.items.map(async (gridItem: any) => {
               const { _ref } = gridItem;

@@ -1,4 +1,4 @@
-import { IHeadingAndTitle, IHero } from '../_lib/types';
+import { IHeadingAndTitle, IHero, IService } from '../_lib/types';
 import GridSection from './grid/GridSection';
 import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
 import HeroSection from './hero/HeroSection';
@@ -8,7 +8,7 @@ import Spacer from './Spacer';
 import UiElement from './uIElements/UiElements';
 
 type IMapContentProps = {
-  content: IHero[] | IHeadingAndTitle[];
+  content: IHero[] | IHeadingAndTitle[] | IService[];
 };
 
 const MapContent = ({ content }: IMapContentProps) => {

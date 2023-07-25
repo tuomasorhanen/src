@@ -16,6 +16,7 @@ import Hero from './types/Hero';
 import spacer from './types/spacer';
 import textContent from './types/textContent';
 import pricing from './types/pricing';
+import service from './Service/service';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -26,6 +27,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     post,
     person,
     category,
+    service,
 
     //Objects
     textContent,

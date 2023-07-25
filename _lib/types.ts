@@ -24,7 +24,26 @@ export type IPage = {
   _type: 'page';
   name: string;
   menuOrder?: number;
-  content?: IHeadingAndTitle[] | IHero[] | IGrid[] | IUiElement[] | IPerson[];
+  content?: IHeadingAndTitle[] | IHero[] | IGrid[] | IUiElement[] | IPerson[] | IService[];
+};
+
+export type IService = {
+  _key: string;
+  _id: string;
+  _type: 'service';
+  title: string;
+  slug: ISlug;
+  description: string;
+  price: number;
+  duration: number;
+  mainImage: ISanityImage;
+};
+
+export type IPrice = {
+  _key: string;
+  _id: string;
+  _type: 'price';
+  service: IService [];
 };
 
 export type ICallToAction = {
