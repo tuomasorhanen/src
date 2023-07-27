@@ -4,7 +4,6 @@ import BlockContentRenderer from '../BlockContentRenderer';
 
 const BlogPost = (props: IPost) => {
   const { person, readingTime, categories, blockContent } = props;
-  console.log(props);
 
   return (
     <div key={props._key} className="">

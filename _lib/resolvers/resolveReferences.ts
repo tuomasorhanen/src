@@ -94,7 +94,6 @@ const resolveReferences = async (page: IPage) => {
           ...
         }[0]`;
                 const serviceData = await client.fetch(serviceQry);
-                console.log(serviceData); // Add this line to log the fetched data
 
                 return serviceData;
               } else {
