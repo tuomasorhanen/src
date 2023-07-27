@@ -33,7 +33,7 @@ export type IService = {
   _type: 'service';
   title: string;
   slug: ISlug;
-  description: string;
+  description: any;
   price: number;
   duration: number;
   mainImage: ISanityImage;

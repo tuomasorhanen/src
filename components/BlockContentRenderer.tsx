@@ -51,7 +51,7 @@ const BlockContentRenderer = ({ blockContent }) => {
     },
   };
 
-  const content = blockContent && blockContent.flatMap(contentItem => contentItem.text || []);
+  const content = Array.isArray(blockContent) ? blockContent.flatMap(contentItem => contentItem.text || []) : [];
   return <BlockContent blocks={content} serializers={serializers} />;
 };
 

@@ -78,8 +78,11 @@ const Page = {
         { type: 'uiElement' },
         { type: 'grid' },
         { type: 'spacer' },
-        { type: 'pricing' },
-      ],
+        { type: 'pricing' }, 
+        {
+          type: 'reference',
+          to: [{ type: 'service' }]
+        },     ],
     }),
   ],
   orderings: [

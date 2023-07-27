@@ -22,7 +22,7 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
 
   const [navBackground, setNavBackground] = useState('bg-transparent');
   const [navOpen, setNavOpen] = useState(false);
-  const [lineColors, setLineColors] = useState('black');
+  const [lineColors, setLineColors] = useState('white');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,8 +36,8 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
           setNavBackground('bg-transparent text-white');
           setLineColors('bg-white');
         } else {
-          setNavBackground('bg-transparent');
-          setLineColors('bg-black');
+          setNavBackground('bg-transparent text-white');
+          setLineColors('bg-white');
         }
       }
     };

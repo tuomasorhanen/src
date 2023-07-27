@@ -27,7 +27,8 @@ export default defineType({
             name: 'description',
             title: 'Description',
             description: 'Add a description of your service.',
-            type: 'text',
+            type: 'array',
+            of: [{ type: 'blockContent' }],
         }),
         defineField({
             name: 'price',

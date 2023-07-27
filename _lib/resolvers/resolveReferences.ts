@@ -116,6 +116,23 @@ const resolveReferences = async (page: IPage) => {
           break;
         case 'person':
           break;
+          case 'reference':
+          if (item._ref) {
+            const serviceQry = groq`*[_id == '${item._ref}']{
+              _id,
+              title,
+              description,
+              price,
+              duration,
+              mainImage,
+              slug,
+              _type,
+              ...
+            }[0]`;
+            const serviceData = await client.fetch(serviceQry);
+            return serviceData;
+          }
+          break;
         default:
           break;
       }

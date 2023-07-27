@@ -4,6 +4,7 @@ import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
 import HeroSection from './hero/HeroSection';
 import CustomButton from './landingPage/CustomButton';
 import Pricing from './price';
+import Service from './service/Service';
 import Spacer from './Spacer';
 import UiElement from './uIElements/UiElements';
 
@@ -30,6 +31,8 @@ const MapContent = ({ content }: IMapContentProps) => {
             return <Spacer key={item._key} {...item} />;
             case 'pricing':
               return <Pricing key={item._key} {...item} />;
+            case 'service':
+              return <Service key={item._key} {...item} />;
           default:
             break;
         }

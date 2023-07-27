@@ -5,7 +5,6 @@ import { client } from '../../_lib/client';
 import { ICategory, IPost, ISiteSettings } from '../../_lib/types';
 import BlogSection from '../../components/blog/BlogSection';
 import CategoryFilter from '../../components/blog/CategoryFilter';
-import MyFooter from '../../components/footer/Footer';
 import Header, { IMenuItem } from '../../components/header/Header';
 
 type IPageProps = {
