@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { ICard, IGrid, IPerson, IPost } from '../../_lib/types';
+import { ICard, IGrid, IPerson, IPost, IService } from '../../_lib/types';
 import BlogReferenceSection from '../../components/blog/BlogReferenceSection';
 import Card from './Card';
 import PersonReferenceSection from './PersonReference';
+import ServiceReferenceSection from 'components/service/serviceReference';
 
 interface GridSectionProps extends IGrid {}
 
@@ -15,6 +16,9 @@ const PostItem = (item: IPost) => {
 const PersonItem = (item: IPerson) => {
   return <PersonReferenceSection {...item} />;
 };
+const ServiceItem = (item: IService) => {
+  return <ServiceReferenceSection {...item} />;
+}
 
 const GridSection = (props: GridSectionProps) => {
   const { columns, items } = props;
@@ -49,21 +53,24 @@ const GridSection = (props: GridSectionProps) => {
 
   const itemsArray = Array.isArray(items) ? items : [items];
 
-  const renderGridItem = (item: ICard | IPost | IPerson) => {
+  const renderGridItem = (item: ICard | IPost | IPerson | IService) => {
     if (item._type === 'card') {
       return CardItem(item as ICard);
     } else if (item._type === 'post') {
       return PostItem(item as IPost);
     } else if (item._type === 'person') {
       return PersonItem(item as IPerson);
-    } else {
+    } else if (item._type === 'service') {
+      return ServiceItem(item as IService);
+    }
+    else {
       return <>Empty grid</>;
     }
   };
 
   return (
     <section>
-      <div key={props._key} className="mx-auto grid max-w-7xl gap-8 px-2 py-8 sm:px-4 md:px-8" style={columnStyles}>
+      <div key={props._key} className="mx-auto grid max-w-7xl gap-8 px-2 sm:px-4 md:px-8" style={columnStyles}>
         {itemsArray.map(item => (
           <div key={item._key}>{renderGridItem(item)}</div>
         ))}

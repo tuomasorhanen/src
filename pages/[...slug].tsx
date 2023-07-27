@@ -9,6 +9,7 @@ import { IHeadingAndTitle, IHero, IPost, IService, ISiteSettings } from '../_lib
 import Header, { IMenuItem } from '../components/header/Header';
 import MapContent from '../components/MapContent';
 import SocialButtons from 'components/social buttons/SocialButtons';
+import Footer from 'components/footer/Footer';
 
 type IPageProps = {
   name: string;
@@ -35,7 +36,7 @@ const IndexPage = (props: IPageProps) => {
       <Header items={menu} settings={settings} heroBgColor={heroBgColor} key={heroBgColor} />
       <MapContent content={content} />
       <SocialButtons />
-      <MyFooter items={menu} />
+      <Footer />
       <style jsx global>{`
         :root {
           --bg-color: ${settings.bgColor.hex};
@@ -66,6 +67,7 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
   const blogsQuery = groq`
     *[_type == 'post']
   `;
+
   const menuQuery = groq`
   *[_type == 'page' && defined(menuOrder)]{
     name,

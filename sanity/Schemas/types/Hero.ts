@@ -28,6 +28,8 @@ const Hero = {
         list: [
           { title: 'image-bg-center', value: 'image-bg-center' },
           { title: 'simple-image-right', value: 'simple-image-right' },
+          { title: 'circle-left', value: 'circle-left' },
+          { title: 'slim-simple', value: 'slim-simple' },
         ],
         validation: Rule => [Rule.required().error('A layout is required.')],
       },

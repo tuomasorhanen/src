@@ -95,9 +95,7 @@ export type IHero = {
   blockContent?: any;
   image?: ISanityImage;
   buttons?: ICallToAction[];
-  layout:
-    | 'image-bg-center'
-    | 'simple-image-right'
+  layout: 'image-bg-center' | 'simple-image-right' | 'circle-left' | 'slim-simple';
   opacity?: number;
   heroTextColor?: IColor;
   heroBgColor?: IColor;

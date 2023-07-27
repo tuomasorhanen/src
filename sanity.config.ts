@@ -7,6 +7,7 @@ import { apiVersion, dataset, projectId } from './sanity/env';
 import { schema } from './sanity/Schemas/schema';
 import { structure } from './sanity/Schemas/types/structure';
 import { media } from 'sanity-plugin-media';
+import {documentInternationalization} from '@sanity/document-internationalization'
 
 
 export default defineConfig({
@@ -14,7 +15,13 @@ export default defineConfig({
   projectId,
   dataset,
   schema,
-  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media(),
+  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media(), documentInternationalization({
+    supportedLanguages: [
+      {id: 'fi', title: 'Finnish'},
+      {id: 'en', title: 'English'}
+    ],
+    schemaTypes: ['page'],
+  })
 ],
   theme: myTheme,
 });

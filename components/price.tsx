@@ -14,8 +14,7 @@ const Pricing = (props: IPrice) => {
             <div>{service.title} - {service.duration} min</div>
           </div>
           <div className="flex items-center">
-            <span className="px-4">{service.price}€</span>
-            <button className="rounded bg-accent p-2 text-white hover:accent hover:opacity-70 hidden sm:block">Varaa aika</button>
+            <span className="text-lg font-bold px-4">{service.price}€</span>
           </div>
         </div>
       ))}

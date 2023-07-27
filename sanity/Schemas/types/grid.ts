@@ -54,6 +54,11 @@ const grid = defineField({
           type: 'reference',
           to: [{ type: 'person' }],
         },
+        {
+          name: 'service',
+          type: 'reference',
+          to: [{ type: 'service' }],
+        }
       ],
     },
   ],

@@ -37,10 +37,11 @@ const resolveReferences = async (page: IPage) => {
             );
           }
           break;
-                case 'grid':
+        case 'grid':
           item.items = await Promise.all(
             item.items.map(async (gridItem: any) => {
-              const { _ref } = gridItem;
+              const { _ref, _type } = gridItem;
+
               if (gridItem._type === 'blog' && _ref) {
                 const blogQry = groq`*[_id == '${_ref}']{
                   _id,
@@ -80,6 +81,22 @@ const resolveReferences = async (page: IPage) => {
                 }[0]`;
                 const personData = await client.fetch(personQry);
                 return personData;
+              } else if (_type === 'service' && _ref) {
+                const serviceQry = groq`*[_id == '${_ref}']{
+          _id,
+          title,
+          description,
+          price,
+          duration,
+          mainImage,
+          slug,
+          _type,
+          ...
+        }[0]`;
+                const serviceData = await client.fetch(serviceQry);
+                console.log(serviceData); // Add this line to log the fetched data
+
+                return serviceData;
               } else {
                 return gridItem;
               }

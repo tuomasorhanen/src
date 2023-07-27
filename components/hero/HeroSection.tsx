@@ -20,9 +20,27 @@ const HeroSection = (props: IHero) => {
             {image && <Image {...image} className="h-full w-full object-cover" alt="" opacity={opacity} />}
           </div>
           <div className="absolute left-0 top-0 z-20 h-full w-full "></div>
-          <div className="z-30 max-w-5xl px-4 text-center" style={textColorStyle}>
+          <div className="z-30 max-w-3xl px-4 text-center" style={textColorStyle}>
             <BlockContentRenderer blockContent={blockContent && blockContent} />
             <div className="mb-2 mt-6 flex h-full flex-wrap items-center justify-center">
+              {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
+            </div>
+          </div>
+        </div>
+      );
+    case 'slim-simple':
+      return (
+        <div
+          key={`${props._key}-image-bg-center`}
+          className="relative flex w-full items-center justify-center h-[300px] sm:h-[400px] md:h-[500px]"
+          style={bgColorStyle}>
+          <div className="absolute left-0 top-0 z-10 h-full w-full">
+            {image && <Image {...image} className="h-full w-full object-cover" alt="" opacity={opacity} />}
+          </div>
+          <div className="absolute left-0 top-0 z-20 h-full w-full "></div>
+          <div className="z-30 max-w-3xl px-4 text-center sm:-mt-20" style={textColorStyle}>
+            <BlockContentRenderer blockContent={blockContent && blockContent} />
+            <div className="mb-2 mt-4 flex h-full flex-wrap items-center justify-center">
               {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
             </div>
           </div>
@@ -51,8 +69,27 @@ const HeroSection = (props: IHero) => {
               </div>
             </div>
             <div className="hidden md:block">
-              {image && <Image {...image} className="h-full w-full object-cover" alt="" opacity={opacity} />}
+              {image && <Image {...image} className="rounded-lg shadow-lg h-full w-full object-cover" alt="" opacity={opacity} />}
             </div>
+          </div>
+        </section>
+      );
+    case 'circle-left':
+      return (
+        <section className="relative md:pb-8" style={bgColorStyle}>
+          <div className="mx-auto grid max-w-7xl grid-cols-1 px-4 gap-8 md:grid-cols-3 lg:py-16">
+          <div className="hidden md:block aspect-square">
+              {image && <Image {...image} className="border-2 border-black shadow-lg aspect-square w-96 rounded-full object-cover" alt="" opacity={opacity} />}
+            </div>
+            <div
+              className="flex col-span-2 flex-col items-center justify-center text-center md:items-start md:text-left"
+              style={textColorStyle}>
+              <BlockContentRenderer blockContent={blockContent && blockContent} />
+              <div className="mt-6 flex flex-shrink items-center justify-center space-x-4 md:-ml-2 md:justify-start">
+                {buttons && buttons.map(btn => <ButtonRenderer key={`${layout}-${btn.callToAction}`} {...btn} />)}
+              </div>
+            </div>
+
           </div>
         </section>
       );
