@@ -39,7 +39,6 @@ const Blogs = (props: IPageProps) => {
           <BlogSection key={post._key} post={post} categories={categories} />
         ))}
       </div>
-      <MyFooter items={menu} />
       <style jsx global>{`
         :root {
           --bg-color: ${settings.bgColor.hex};
