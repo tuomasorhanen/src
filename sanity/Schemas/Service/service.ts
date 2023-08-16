@@ -34,13 +34,15 @@ export default defineType({
             name: 'price',
             title: 'Price',
             description: 'Add a price for your service.',
-            type: 'number',
+            type: 'array',
+            of: [ {type: 'number'}]
         }),
         defineField({
             name: 'duration',
             title: 'Duration',
             description: 'Add a duration for your service.',
-            type: 'number',
+            type: 'array',
+            of: [ {type: 'number'}],
         }),
         defineField({
             name: 'mainImage',
