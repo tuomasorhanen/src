@@ -23,11 +23,11 @@ export type IPage = {
 };
 
 export type ISanityImage = {
-  _key: string;
-  _id: string;
-  url: any;
-  _type: string;
-  asset: {
+  _key?: string;
+  _id?: string;
+  url?: any;
+  _type?: string;
+  asset?: {
     url(url: any): unknown;
     _ref: string;
     _type: string;
@@ -43,4 +43,11 @@ export type IHeadingAndTitle = {
 
 export type ISlug = {
   current: string;
+};
+
+export type IImageGallery = {
+  _id: string;
+  _type: string;
+  _key: string;
+  image: ISanityImage[];
 };

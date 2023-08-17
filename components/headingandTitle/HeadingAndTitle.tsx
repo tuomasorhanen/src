@@ -6,7 +6,7 @@ const HeadingAndTitle = (props: IHeadingAndTitle) => {
 
       return (
         <div key={props._key} className="py-16 ">
-          <div className="mx-auto max-w-4xl px-4 text-7xl font-bold text-center text-black">
+          <div className="mx-auto max-w-4xl px-4 text-7xl font-bold text-center">
             {heading}
           </div>
         </div>

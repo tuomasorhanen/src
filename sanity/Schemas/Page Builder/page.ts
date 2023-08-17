@@ -73,6 +73,7 @@ const Page = {
       group: 'content',
       of: [
         { type: 'headingAndTitle' },
+        { type: 'imageGallery' },
       ],
     }),
   ],
