@@ -72,17 +72,8 @@ const Page = {
       type: 'array',
       group: 'content',
       of: [
-        { type: 'hero' },
         { type: 'headingAndTitle' },
-        { type: 'customButton' },
-        { type: 'uiElement' },
-        { type: 'grid' },
-        { type: 'spacer' },
-        { type: 'pricing' }, 
-        {
-          type: 'reference',
-          to: [{ type: 'service' }]
-        },     ],
+      ],
     }),
   ],
   orderings: [

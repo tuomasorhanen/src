@@ -1,9 +1,9 @@
 import chroma from 'chroma-js';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { ISiteSettings, ISlug } from '../../_lib/types';
 import Image from '../../components/Image';
+import Link from 'next/link';
 
 export type IMenuItem = {
   name: string;
@@ -14,50 +14,19 @@ export type IMenuItem = {
 type IMenuProps = {
   items: IMenuItem[];
   _key?: string;
-  heroBgColor?: string;
 };
 
 const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
-  const { items, settings, heroBgColor } = props;
-
-  const [navBackground, setNavBackground] = useState('bg-transparent');
+  const { items, settings } = props;
   const [navOpen, setNavOpen] = useState(false);
-  const [lineColors, setLineColors] = useState('white');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-
-      if (scrollPosition > 0) {
-        setNavBackground('bg-bg shadow-lg');
-      } else {
-        const bgColor = heroBgColor || settings.bgColor.hex;
-        if (chroma.contrast(settings.textColor.hex, bgColor) < 5.0) {
-          setNavBackground('bg-transparent text-white');
-          setLineColors('bg-white');
-        } else {
-          setNavBackground('bg-transparent text-white');
-          setLineColors('bg-white');
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [heroBgColor, settings.bgColor.hex, settings.textColor.hex]);
 
   const renderDesktopNav = () => (
     <nav
   key={props._key}
-  className={`fixed top-0 z-40 hidden w-full md:block ${navBackground} duration-800 transition delay-300 ease-in-out`}>
+  className={`fixed top-0 z-40 hidden w-full md:block duration-800 transition delay-300 ease-in-out`}>
   <div className="flex justify-between py-2">
     <Link href="/" className="z-40 flex items-center">
       <Image {...settings.logo} alt={settings.title} className="mx-10 rounded-full max-h-12 w-12 object-contain hover:scale-105" />
-      <span className='-ml-6 text-xl'>Fysiosarianne</span>
     </Link>
     <div className="z-40 hidden md:block" id="navbar-default">
       <ul className="mx-10 my-2 flex">
@@ -88,8 +57,8 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
           </Link>{' '}
           <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
             <div className={navOpen ? 'hamBox hamBoxOpen' : 'hamBox'}>
-              <span className={navOpen ? `lineTop spin ${lineColors}` : `lineTop ${lineColors}`}></span>
-              <span className={navOpen ? `lineBottom spin ${lineColors}` : `lineBottom ${lineColors}`}></span>
+              <span className={navOpen ? `lineTop spin` : `lineTop`}></span>
+              <span className={navOpen ? `lineBottom spin` : `lineBottom`}></span>
             </div>
           </div>
         </div>

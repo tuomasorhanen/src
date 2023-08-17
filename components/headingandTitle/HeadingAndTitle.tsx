@@ -1,23 +1,18 @@
 import React from 'react';
-
 import { IHeadingAndTitle } from '../../_lib/types';
-import BlockContentRenderer from '../../components/BlockContentRenderer';
 
 const HeadingAndTitle = (props: IHeadingAndTitle) => {
-  const { blockContent, style } = props;
+  const { heading } = props;
 
-  switch (style) {
-    case 'centered':
+  console.log(props)
+
       return (
-        <div key={props._key} className="py-8 md:py-16 ">
-          <div className="mx-auto max-w-4xl px-4 text-center">
-            <BlockContentRenderer blockContent={blockContent && blockContent} />
+        <div key={props._key} className="py-16 ">
+          <div className="mx-auto max-w-4xl px-4 text-7xl font-bold text-center text-black">
+            {heading}
           </div>
         </div>
       );
-    default:
-      return <></>;
-  }
 };
 
 export default HeadingAndTitle;
