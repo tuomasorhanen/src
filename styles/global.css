@@ -9,26 +9,8 @@
     @apply bg-bg text-text font-extralight;
     font-family: 'Open Sans', sans-serif;
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Roboto Slab', serif;
-  }
 }
 @layer components {
-  .button {
-    @apply relative mx-2 inline-block rounded-full px-2 py-2 text-xs shadow-xl hover:scale-105 sm:px-4 sm:text-xl;
-    background-color: var(--button-bg-color, var(--bg-color));
-    color: var(--button-text-color, var(--text-color));
-    border: 2px solid var(--bg-color);
-  }
-  .borderstyle {
-    @apply border border-text;
-  }
 
   .nav {
     z-index: 2;

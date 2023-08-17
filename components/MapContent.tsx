@@ -7,7 +7,7 @@ type IMapContentProps = {
 
 const MapContent = ({ content }: IMapContentProps) => {
   return (
-    <div className="mx-auto overflow-hidden">
+    <div className="overflow-hidden">
       {content.map(item => {
         switch (item._type) {
           case 'headingAndTitle':

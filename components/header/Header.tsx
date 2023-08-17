@@ -1,4 +1,3 @@
-import chroma from 'chroma-js';
 import { useState } from 'react';
 
 import { ISiteSettings, ISlug } from '../../_lib/types';
@@ -45,7 +44,6 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
     </div>
   </div>
 </nav>
-
   );
 
   const renderMobileNav = () => (
