@@ -2,14 +2,14 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { groq } from 'next-sanity';
 import { client } from '../_lib/client';
-import { IHeadingAndTitle, ISiteSettings } from '../_lib/types';
+import { IHeadingAndTitle, IImageGallery, ISiteSettings } from '../_lib/types';
 import Header, { IMenuItem } from '../components/header/Header';
 import MapContent from '../components/MapContent';
 type IPageProps = {
   name: string;
   title: string;
   description: string;
-  content: IHeadingAndTitle[];
+  content: IHeadingAndTitle[] | IImageGallery[];
   menu: IMenuItem[];
   settings: ISiteSettings;
 };

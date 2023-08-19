@@ -1,3 +1,5 @@
+import chosenGallery from "sanity/Schemas/types/chosenGallery";
+
 export type ISiteSettings = {
   accentColor: IColor;
   _id: string;
@@ -50,4 +52,11 @@ export type IImageGallery = {
   _type: string;
   _key: string;
   image: ISanityImage[];
+};
+
+export type IChosenGallery = {
+  _id: string;
+  _type: string;
+  _key: string;
+  chosenImage: ISanityImage[];
 };

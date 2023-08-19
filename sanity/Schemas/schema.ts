@@ -3,6 +3,7 @@ import Page from './Page Builder/page';
 import siteSettings from './Site Settings/siteSettings';
 import headingAndTitle from './types/headingAndTitle';
 import ImageGallery from './types/imageGallery';
+import chosenGallery from './types/chosenGallery';
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -14,5 +15,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     //Objects
     headingAndTitle,
     ImageGallery,
+    chosenGallery,
   ],
 };

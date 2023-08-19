@@ -76,6 +76,11 @@ const Page = {
         { type: 'imageGallery' },
       ],
     }),
+    defineField({
+      name: 'chosenImages',
+      title: 'Chosen images',
+      type: 'chosenGallery',
+    }),
   ],
   orderings: [
     {

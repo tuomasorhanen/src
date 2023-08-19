@@ -138,6 +138,14 @@
     background: var(--accent-color);
     margin: 0 auto;
   }
+  .heart-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
 
   @media (max-width: 900px) {
     ul.nav-links li a {
