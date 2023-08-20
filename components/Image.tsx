@@ -17,7 +17,9 @@ const generateSrcSet = (props, format) => {
 };
 
 const Image = (props: ISanityImage & IImgProps) => {
-  const { className, alt, opacity } = props;
+  const { className, alt, opacity, asset } = props;
+
+  if (!asset) return null; // return null or an alternative component if asset is not defined
 
   const imageStyles = opacity ? { opacity: opacity / 100 } : {};
 
@@ -36,7 +38,7 @@ const Image = (props: ISanityImage & IImgProps) => {
       <source srcSet={srcSetWebP} type="image/webp" />
       <source srcSet={srcSetDefault} type="image/jpeg" />
       <Img
-        key={props.asset._ref}
+        key={asset._ref}
         src={src}
         width={props.width || 1000}
         height={props.height || 1000}
