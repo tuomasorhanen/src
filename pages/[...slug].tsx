@@ -34,7 +34,7 @@ const IndexPage = (props: IPageProps) => {
 };
 
 export const getServerSideProps: GetServerSideProps<IPageProps> = async context => {
-  context.res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
+  context.res.setHeader('Cache-Control', 'no-store');
 
   let { slug } = context.query;
 
