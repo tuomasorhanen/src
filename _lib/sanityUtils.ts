@@ -8,12 +8,7 @@ const client = sanityClient({
   useCdn: false, // `false` if you want to ensure fresh data
 });
 
-export const uploadImagesToSanity = async (images: File[], pageTitle: string, password: string) => {
-    // Check if the password is correct
-    if (password !== 'testing123') {
-      console.error('Incorrect password. Upload operation aborted.');
-      return;
-    }
+export const uploadImagesToSanity = async (images: File[], pageTitle: string) => {
 
     const page = await client.fetch(`*[_type == 'page' && title == $title][0]`, { title: pageTitle });
 

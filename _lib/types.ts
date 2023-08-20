@@ -48,9 +48,9 @@ export type ISlug = {
 };
 
 export type IImageGallery = {
-  _id: string;
-  _type: string;
-  _key: string;
+  _id?: string;
+  _type?: string;
+  _key?: string;
   image: ISanityImage[];
 };
 

@@ -3,19 +3,17 @@ import Head from 'next/head';
 import { groq } from 'next-sanity';
 import { client } from '../_lib/client';
 import { IHeadingAndTitle, IImageGallery, ISiteSettings } from '../_lib/types';
-import Header, { IMenuItem } from '../components/header/Header';
 import MapContent from '../components/MapContent';
 type IPageProps = {
   name: string;
   title: string;
   description: string;
   content: IHeadingAndTitle[] | IImageGallery[];
-  menu: IMenuItem[];
   settings: ISiteSettings;
 };
 
 const IndexPage = (props: IPageProps) => {
-  const { content, menu, settings, name, description } = props;
+  const { content, settings, name, description } = props;
 
   return (
     <>
@@ -23,7 +21,6 @@ const IndexPage = (props: IPageProps) => {
         <title>{name}</title>
         <meta name="description" content={description} />
       </Head>
-      <Header items={menu} settings={settings}/>
       <MapContent content={content} />
       <style jsx global>{`
         :root {
@@ -53,19 +50,11 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
     };
   }
 
-  const menuQuery = groq`
-  *[_type == 'page' && defined(menuOrder)]{
-    name,
-    slug,
-    menuOrder,
-    title,
-  } | order(menuOrder asc)`;
   const siteSettingsQuery = groq`
   *[_type == 'siteSettings'][0]
 `;
 
-  let [menuResponse, siteSettingsResponse] = await Promise.all([
-    client.fetch<IMenuItem[]>(menuQuery),
+  let [siteSettingsResponse] = await Promise.all([
     client.fetch(siteSettingsQuery),
   ]);
 
@@ -77,7 +66,6 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
       title,
       description,
       content: pageResponse.content,
-      menu: menuResponse,
       settings: siteSettingsResponse,
     },
   };

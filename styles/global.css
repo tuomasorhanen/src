@@ -145,6 +145,25 @@
     cursor: pointer;
     font-size: 24px;
   }
+  .carousel-container {
+    max-width: 100%;
+    height: 80vh; /* This will take 80% of the viewport height */
+  }
+  
+  .carousel-container .Carousel .slide {
+    height: 100%;
+  }
+  
+  .carousel-container .Carousel .carousel-slider {
+    height: 100%;
+  }
+  
+  .carousel-container img {
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
   
 
   @media (max-width: 900px) {

@@ -27,6 +27,7 @@
     "react-async": "^10.0.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-responsive-carousel": "^3.2.23",
     "sanity": "^3.5.0",
     "sanity-plugin-media": "^2.0.5",
     "styled-components": "^5.3.6",

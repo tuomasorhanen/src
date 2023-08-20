@@ -5,7 +5,6 @@ import React, { useState, ChangeEvent } from 'react';
 function AdminPage() {
   const [images, setImages] = useState<File[]>([]);
   const [pageTitle, setPageTitle] = useState<string>('');
-  const [password, setPassword] = useState<string>(''); // State for password
   const [isUploading, setIsUploading] = useState<boolean>(false);
 
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -19,27 +18,15 @@ function AdminPage() {
     setPageTitle(e.target.value);
   };
 
-  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => { // Handler for password
-    setPassword(e.target.value);
-  };
 
   const handleUploadClick = async () => {
     setIsUploading(true);
-    await uploadImagesToSanity(images, pageTitle, password); // Pass the password here
+    await uploadImagesToSanity(images, pageTitle);
     setIsUploading(false);
   };
 
   return (
-    <div className="p-8 h-full flex flex-col justify-center items-center">
-      <input
-        type="password"
-        placeholder='Password'
-        id="password"
-        name="password"
-        value={password}
-        onChange={handlePasswordChange}
-        className="w-1/4 p-2 mb-4 border rounded-full text-white bg-black" // Same styling
-      />
+    <div className="p-8 h-full flex flex-col justify-center items-center ">
       <input
         type="text"
         placeholder='Page Title'
