@@ -39,11 +39,11 @@ const Gallery = (props: IImageGallery) => {
     setCarouselOpen(true);
   };
   
-  const handleImageClick = (index: number) => {
+  const handleImageClick = (index: number, event: React.MouseEvent) => {
     if (totalSelected === 0) {
       handleCarouselOpen(index);
     } else {
-      handleImageSelect(index);
+      handleImageSelect(index, event);
     }
   };
 
@@ -53,12 +53,14 @@ const Gallery = (props: IImageGallery) => {
   };
   
 
-  const handleImageSelect = (index: number) => {
+  const handleImageSelect = (index: number, event: React.MouseEvent) => {
+    event.stopPropagation(); // Stop event from bubbling up to parent (image click event)
     if (imagesSent) return; // Ignore clicks if images have been sent
     const newSelectedImages = [...selectedImages];
     newSelectedImages[index] = !newSelectedImages[index];
     setSelectedImages(newSelectedImages);
   };
+  
 
   useEffect(() => {
     if (!imagesSent) {
@@ -88,7 +90,7 @@ const Gallery = (props: IImageGallery) => {
          {carouselOpen && currentImageIndex !== null && (
       <div className="fixed inset-0 z-50 bg-black flex justify-center items-center">
         <button onClick={handleCarouselClose} className="absolute top-4 right-4 text-white">Close</button>
-        <div className=''><CarouselComponent image={image} /></div>
+        <div className=''><CarouselComponent image={image}  /></div>
         
       </div>
     )}
@@ -105,15 +107,15 @@ const Gallery = (props: IImageGallery) => {
       </div>
       <section className="flex flex-col items-center justify-center p-8 py-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 w-full max-w-6xl">
-          {image && image.map((images, index) => (
-    <button key={index} onClick={() => handleImageClick(index)} className="relative overflow-hidden hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
-    <div className="absolute top-0 left-0 z-40" onClick={() => handleImageSelect(index)}>
-                {selectedImages[index] ? <AiFillCheckCircle className='h-8 w-8' /> : <AiOutlineCheckCircle className='h-8 w-8' />}
-              </div>
-              <Image {...images} alt="this" className={`w-full h-auto ${selectedImages[index] ? 'opacity-50' : 'opacity-100'}`} />
-            </button>
-          ))}
-        </div>
+        {image && image.map((images, index) => (
+    <button key={index} onClick={(event) => handleImageClick(index, event)} className="relative overflow-hidden hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+    <div className="absolute top-0 left-0 z-40" onClick={(event) => handleImageSelect(index, event)}> {/* Pass the event object here */}
+              {selectedImages[index] ? <AiFillCheckCircle className='h-8 w-8' /> : <AiOutlineCheckCircle className='h-8 w-8' />}
+            </div>
+            <Image {...images} alt="this" className={`w-full h-auto ${selectedImages[index] ? 'opacity-50' : 'opacity-100'}`} />
+          </button>
+        ))}
+      </div>
       </section>
     </>
   );
